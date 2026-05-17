@@ -1,18 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>For Lareen</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Lareen ✨</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+overflow:hidden;
+background:black;
+font-family:Georgia, serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-3;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(3px);
+z-index:-2;
+}
+
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(white 1px, transparent 1px);
+background-size:40px 40px;
+opacity:0.15;
+animation:moveStars 80s linear infinite;
+z-index:-1;
+}
+
+@keyframes moveStars{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-1000px);
+}
+}
+
+.content{
+text-align:center;
+padding:50px;
+animation:fade 2s ease;
+}
+
+h1{
+font-size:90px;
+letter-spacing:4px;
+margin-bottom:20px;
+text-shadow:0 0 25px rgba(255,255,255,0.7);
+}
+
+p{
+font-size:28px;
+max-width:900px;
+line-height:1.7;
+opacity:0.92;
+text-shadow:0 0 10px rgba(255,255,255,0.4);
+}
+
+.button{
+margin-top:40px;
+padding:18px 45px;
+font-size:18px;
+background:rgba(255,255,255,0.1);
+border:1px solid rgba(255,255,255,0.3);
+color:white;
+border-radius:50px;
+cursor:pointer;
+backdrop-filter:blur(10px);
+transition:0.4s;
+}
+
+.button:hover{
+transform:scale(1.05);
+background:rgba(255,255,255,0.2);
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
 </head>
 
-<body style="background:black;color:white;text-align:center;font-family:Georgia;">
+<body>
 
-<h1 style="margin-top:300px;">
-Lareen ✨
-</h1>
+<video autoplay muted loop playsinline>
+<source src="lareen.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+<div class="stars"></div>
+
+<div class="content">
+
+<h1>Lareen ✨</h1>
 
 <p>
 The brightest spell ever written beneath my sky.
 </p>
+
+<button class="button" onclick="playMusic()">
+Open The Magic ✨
+</button>
+
+</div>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+function playMusic(){
+document.getElementById("music").play();
+}
+
+</script>
 
 </body>
 </html>
