@@ -138,7 +138,7 @@ transform:translateY(0);
 The brightest spell ever written beneath my sky.
 </p>
 
-<button class="button" onclick="playMusic()">
+<button class="button" onclick="startMagic()">
 Open The Magic ✨
 </button>
 
@@ -150,8 +150,16 @@ Open The Magic ✨
 
 <script>
 
-function playMusic(){
+function startMagic(){
+
 document.getElementById("music").play();
+
+document.querySelector(".content").style.opacity = "0";
+
+setTimeout(() => {
+document.querySelector(".content").style.display = "none";
+},1000);
+
 }
 
 </script>
